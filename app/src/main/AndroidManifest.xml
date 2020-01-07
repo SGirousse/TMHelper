@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.paugo.tmtimer">
+    package="com.paugo.tmhelper">
 
     <application
-        android:name=".application.TMTimerApplication"
+        android:name="com.paugo.tmhelper.application.TMTimerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/tm_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CustomActionBarTheme">
-        <activity android:name=".InterGenActivity" />
-        <activity android:name=".PlayerTimerActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name="com.paugo.tmhelper.activity.options.GameOptionsSelectionActivity"
+            android:theme="@style/CustomActionBarTheme.NoActionBar" />
+        <activity android:name="com.paugo.tmhelper.activity.game.InterGenActivity" />
+        <activity android:name="com.paugo.tmhelper.activity.game.PlayerTimerActivity" />
+        <activity android:name="com.paugo.tmhelper.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

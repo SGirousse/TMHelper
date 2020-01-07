@@ -1,4 +1,4 @@
-package com.paugo.tmtimer;
+package com.paugo.tmhelper.activity.game;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,9 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.paugo.tmtimer.application.TMTimerApplicationUtil;
-import com.paugo.tmtimer.pojo.Player;
-import com.paugo.tmtimer.timer.TMTimerListener;
+import com.paugo.tmhelper.R;
+import com.paugo.tmhelper.activity.options.GameOptionsSelectionActivity;
+import com.paugo.tmhelper.application.TMTimerApplicationUtil;
+import com.paugo.tmhelper.pojo.Player;
+import com.paugo.tmhelper.timer.TMTimerListener;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -25,7 +27,7 @@ import java.util.TimerTask;
 
 public class PlayerTimerActivity extends AppCompatActivity implements TMTimerListener {
 
-    public static final String ALL_PLAYERS_CARD_BUY_TIME_IN_MS = "ALL_PLAYERS_CARD_BUY_TIME_IN_MS";
+    public static final String ALL_PLAYERS_CARD_BUY_TIME_IN_MS = "ARG_ALL_PLAYERS_CARD_BUY_TIME_IN_MS";
     public static final String CURRENT_GENERATION_NUMBER = "CURRENT_GENERATION_NUMBER";
     private static final String TAG = "PlayerTimerActivity";
     private static final long BUTTON_DISABLE_TIME_MS = 3000;
@@ -47,7 +49,7 @@ public class PlayerTimerActivity extends AppCompatActivity implements TMTimerLis
 
         Intent intent = getIntent();
 
-        this.cardBuyInMs = intent.getLongExtra(MainActivity.ALL_PLAYERS_CARD_BUY_TIME_IN_MS, TMTimerApplicationUtil.DEFAULT_ALL_PLAYERS_CARD_BUY_TIME_IN_MS);
+        this.cardBuyInMs = intent.getLongExtra(GameOptionsSelectionActivity.ARG_ALL_PLAYERS_CARD_BUY_TIME_IN_MS, TMTimerApplicationUtil.DEFAULT_ALL_PLAYERS_CARD_BUY_TIME_IN_MS);
         Log.i(TAG, "Time allocated for card selection per generation (in ms) : " + this.cardBuyInMs);
 
         playersInitalization(intent);
@@ -81,32 +83,32 @@ public class PlayerTimerActivity extends AppCompatActivity implements TMTimerLis
     }
 
     private void playersInitalization(Intent intent) {
-        long playerTimeInMs = intent.getLongExtra(MainActivity.PLAYER_TURN_TIME_IN_MS, 600000);
+        long playerTimeInMs = intent.getLongExtra(GameOptionsSelectionActivity.ARG_PLAYER_TURN_TIME_IN_MS, 600000);
 
-        Set<Integer> playersToDisable = new HashSet<Integer>(4);
-        playersToDisable.add(Integer.valueOf(R.id.p2ConstraintLayout));
-        playersToDisable.add(Integer.valueOf(R.id.p3ConstraintLayout));
-        playersToDisable.add(Integer.valueOf(R.id.p4ConstraintLayout));
-        playersToDisable.add(Integer.valueOf(R.id.p5ConstraintLayout));
+        Set<Integer> playersToDisable = new HashSet<>(4);
+        playersToDisable.add(R.id.p2ConstraintLayout);
+        playersToDisable.add(R.id.p3ConstraintLayout);
+        playersToDisable.add(R.id.p4ConstraintLayout);
+        playersToDisable.add(R.id.p5ConstraintLayout);
 
         this.players = new ArrayList<>();
 
-        if (playerInitalization(intent, MainActivity.PLAYER_1_NAME, R.id.no, R.id.currPlayerName, R.id.main_editTextPlayerTimeMin, playerTimeInMs)) {
-            if (playerInitalization(intent, MainActivity.PLAYER_2_NAME, R.id.no2, R.id.currPlayerName2, R.id.playerTimeValue2, playerTimeInMs)) {
-                playersToDisable.remove(Integer.valueOf(R.id.p2ConstraintLayout));
-                if (playerInitalization(intent, MainActivity.PLAYER_3_NAME, R.id.no3, R.id.currPlayerName3, R.id.playerTimeValue3, playerTimeInMs)) {
-                    playersToDisable.remove(Integer.valueOf(R.id.p3ConstraintLayout));
-                    if (playerInitalization(intent, MainActivity.PLAYER_4_NAME, R.id.no4, R.id.currPlayerName4, R.id.playerTimeValue4, playerTimeInMs)) {
-                        playersToDisable.remove(Integer.valueOf(R.id.p4ConstraintLayout));
-                        if (playerInitalization(intent, MainActivity.PLAYER_5_NAME, R.id.no5, R.id.currPlayerName5, R.id.playerTimeValue5, playerTimeInMs)) {
-                            playersToDisable.remove(Integer.valueOf(R.id.p5ConstraintLayout));
+        if (playerInitalization(intent, GameOptionsSelectionActivity.ARG_PLAYER_1_NAME, R.id.no1, R.id.currPlayerName1, R.id.playerTimeValue1, playerTimeInMs)) {
+            if (playerInitalization(intent, GameOptionsSelectionActivity.ARG_PLAYER_2_NAME, R.id.no2, R.id.currPlayerName2, R.id.playerTimeValue2, playerTimeInMs)) {
+                playersToDisable.remove(R.id.p2ConstraintLayout);
+                if (playerInitalization(intent, GameOptionsSelectionActivity.ARG_PLAYER_3_NAME, R.id.no3, R.id.currPlayerName3, R.id.playerTimeValue3, playerTimeInMs)) {
+                    playersToDisable.remove(R.id.p3ConstraintLayout);
+                    if (playerInitalization(intent, GameOptionsSelectionActivity.ARG_PLAYER_4_NAME, R.id.no4, R.id.currPlayerName4, R.id.playerTimeValue4, playerTimeInMs)) {
+                        playersToDisable.remove(R.id.p4ConstraintLayout);
+                        if (playerInitalization(intent, GameOptionsSelectionActivity.ARG_PLAYER_5_NAME, R.id.no5, R.id.currPlayerName5, R.id.playerTimeValue5, playerTimeInMs)) {
+                            playersToDisable.remove(R.id.p5ConstraintLayout);
                         }
                     }
                 }
             }
 
             for (Integer i : playersToDisable) {
-                findViewById(i.intValue()).setVisibility(View.GONE);
+                findViewById(i).setVisibility(View.GONE);
             }
 
         } else {
@@ -119,6 +121,7 @@ public class PlayerTimerActivity extends AppCompatActivity implements TMTimerLis
 
     private boolean playerInitalization(Intent intent, String IntentPlayerId, int textViewPlayerPlacementId, int textViewPlayerNameId, int textViewPlayerChronoId, long playerTimeInMs) {
         String playerName = intent.getStringExtra(IntentPlayerId);
+        Log.d(TAG, "Initialize player " + playerName);
         if (playerName != null && !playerName.isEmpty()) {
             ((TextView) findViewById(textViewPlayerNameId)).setText(playerName);
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_portrait_tm"
-    tools:context=".InterGenActivity">
+    tools:context="com.paugo.tmhelper.activity.game.InterGenActivity">
 
     <ImageButton
         android:id="@+id/interGen_soundButton"

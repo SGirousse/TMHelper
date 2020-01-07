@@ -1,4 +1,4 @@
-package com.paugo.tmtimer;
+package com.paugo.tmhelper;
 
 import org.junit.Test;
 

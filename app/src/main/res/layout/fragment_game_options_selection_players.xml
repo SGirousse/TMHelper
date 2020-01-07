@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_portrait_tm">
+
+    <TextView
+        android:id="@+id/gameOptionsSelectionPlayers_textViewTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="@string/game_options_selection_players_title"
+        android:textAlignment="center"
+        android:textColor="@color/tm_light_1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/playerSelectionLayout"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p1selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionPlayers_textViewPlayer1"
+                android:layout_width="117dp"
+                android:layout_height="37dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Joueur 1  :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="@+id/space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/space"
+                app:layout_constraintVertical_bias="0.485" />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gameOptionsSelectionPlayers_editTextPlayerName1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gameOptionsSelectionPlayers_textViewPlayer1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionPlayers_editTextPlayerName1"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="Nom du joueur 1"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gameOptionsSelectionPlayers_textViewPlayer1"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p2selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p1selection">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionPlayers_textViewPlayer2"
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Joueur 2 :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.437" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gameOptionsSelectionPlayers_editTextPlayerName2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gameOptionsSelectionPlayers_textViewPlayer2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionPlayers_editTextPlayerName2"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="Nom du joueur 2"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gameOptionsSelectionPlayers_textViewPlayer2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p3selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p2selection">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionPlayers_textViewPlayer3"
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Joueur 3 :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gameOptionsSelectionPlayers_editTextPlayerName3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gameOptionsSelectionPlayers_textViewPlayer3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionPlayers_editTextPlayerName3"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="Nom du joueur 3"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gameOptionsSelectionPlayers_textViewPlayer3"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p4selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p3selection">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionPlayers_textViewPlayer4"
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Joueur 4 :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gameOptionsSelectionPlayers_editTextPlayerName4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gameOptionsSelectionPlayers_textViewPlayer4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionPlayers_editTextPlayerName4"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="Nom du joueur 4"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gameOptionsSelectionPlayers_textViewPlayer4"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p5selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/p4selection">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionPlayers_textViewPlayer5"
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Joueur 5 :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gameOptionsSelectionPlayers_editTextPlayerName5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gameOptionsSelectionPlayers_textViewPlayer5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionPlayers_editTextPlayerName5"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="Nom du joueur 5"
+                android:inputType="textPersonName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gameOptionsSelectionPlayers_textViewPlayer5"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

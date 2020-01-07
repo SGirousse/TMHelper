@@ -1,4 +1,4 @@
-package com.paugo.tmtimer.timer;
+package com.paugo.tmhelper.timer;
 
 import android.graphics.Color;
 import android.widget.TextView;

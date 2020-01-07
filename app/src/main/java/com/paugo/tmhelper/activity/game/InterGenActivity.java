@@ -1,4 +1,4 @@
-package com.paugo.tmtimer;
+package com.paugo.tmhelper.activity.game;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.paugo.tmtimer.application.TMTimerApplicationUtil;
-import com.paugo.tmtimer.timer.TMTimer;
-import com.paugo.tmtimer.timer.TMTimerListener;
-import com.paugo.tmtimer.timer.TMTimerUtil;
+import com.paugo.tmhelper.R;
+import com.paugo.tmhelper.application.TMTimerApplicationUtil;
+import com.paugo.tmhelper.timer.TMTimer;
+import com.paugo.tmhelper.timer.TMTimerListener;
+import com.paugo.tmhelper.timer.TMTimerUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;

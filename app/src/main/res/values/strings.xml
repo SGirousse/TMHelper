@@ -1,3 +1,17 @@
 <resources>
+    <!-- Global info -->
     <string name="app_name">Terraforming Mars Timer</string>
+
+    <!-- Game options selection -->
+    <!-- Game options selection : players -->
+    <string name="game_options_selection_tab_1_title">Players</string>
+    <string name="game_options_selection_players_title">Sélection des joueurs</string>
+
+    <!-- Game options selection : timings -->
+    <string name="game_options_selection_tab_2_title">Timings</string>
+    <string name="game_options_selection_timings_title">Définition des limites de temps</string>
+
+    <!-- Game options selection : extensions -->
+    <string name="game_options_selection_tab_3_title">Extensions</string>
+    <string name="game_options_selection_extensions_title">Sélection des extensions</string>
 </resources>

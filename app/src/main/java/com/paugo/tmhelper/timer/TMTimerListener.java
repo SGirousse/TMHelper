@@ -1,4 +1,4 @@
-package com.paugo.tmtimer.timer;
+package com.paugo.tmhelper.timer;
 
 /**
  * Interface for an activity listening a timer.

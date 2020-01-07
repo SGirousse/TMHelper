@@ -1,4 +1,4 @@
-package com.paugo.tmtimer.application;
+package com.paugo.tmhelper.application;
 
 import android.app.Application;
 

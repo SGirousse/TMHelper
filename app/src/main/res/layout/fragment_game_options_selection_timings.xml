@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_portrait_tm">
+
+    <TextView
+        android:id="@+id/gameOptionsSelectionTimings_textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="@string/game_options_selection_timings_title"
+        android:textAlignment="center"
+        android:textColor="@color/tm_light_1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/timeSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cardBuyLayout"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionTimings_textViewCardBuyTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Temps achat cartes :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="139dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="45dp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text=":"
+                android:textAlignment="center"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionTimings_editTextCardBuyTimeMin"
+                android:layout_width="60dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="45dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="mm"
+                android:inputType="numberSigned"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionTimings_editTextCardBuyTimeSec"
+                android:layout_width="60dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="128dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="ss"
+                android:inputType="numberSigned"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/playerTimeLayout"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardBuyLayout">
+
+            <TextView
+                android:id="@+id/gameOptionsSelectionTimings_textViewPlayerTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="Temps par gen et par joueur :"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="139dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="45dp"
+                android:background="@android:color/white"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text=":"
+                android:textAlignment="center"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionTimings_editTextPlayerTimeMin"
+                android:layout_width="59dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="45dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="mm"
+                android:inputType="textUri|time"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/gameOptionsSelectionTimings_editTextPlayerTimeSec"
+                android:layout_width="59dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="128dp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:hint="ss"
+                android:inputType="textUri|time"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

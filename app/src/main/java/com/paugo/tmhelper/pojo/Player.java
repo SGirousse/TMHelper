@@ -1,10 +1,10 @@
-package com.paugo.tmtimer.pojo;
+package com.paugo.tmhelper.pojo;
 
 import android.util.Log;
 import android.widget.TextView;
 
-import com.paugo.tmtimer.timer.TMTimer;
-import com.paugo.tmtimer.timer.TMTimerListener;
+import com.paugo.tmhelper.timer.TMTimer;
+import com.paugo.tmhelper.timer.TMTimerListener;
 
 public class Player {
     private static final String TAG = "Player";

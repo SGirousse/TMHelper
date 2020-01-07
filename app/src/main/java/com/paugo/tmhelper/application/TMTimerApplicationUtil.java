@@ -1,4 +1,4 @@
-package com.paugo.tmtimer.application;
+package com.paugo.tmhelper.application;
 
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.paugo.tmtimer.R;
+import com.paugo.tmhelper.R;
 
 public final class TMTimerApplicationUtil {
 

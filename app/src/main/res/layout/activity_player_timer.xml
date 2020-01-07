@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_portrait_tm"
-    tools:context=".PlayerTimerActivity">
+    tools:context="com.paugo.tmhelper.activity.game.PlayerTimerActivity">
 
     <ImageButton
         android:id="@+id/playerTimer_soundButton"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/no"
+                android:id="@+id/no1"
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -85,20 +85,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/currPlayerName"
+                android:id="@+id/currPlayerName1"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/ft_tm_prototype"
                 android:text="PlayerName"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/no"
-                app:layout_constraintEnd_toStartOf="@+id/main_editTextPlayerTimeMin"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no1"
+                app:layout_constraintEnd_toStartOf="@+id/playerTimeValue1"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/no" />
+                app:layout_constraintStart_toEndOf="@+id/no1" />
 
             <TextView
-                android:id="@+id/main_editTextPlayerTimeMin"
+                android:id="@+id/playerTimeValue1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -106,7 +106,7 @@
                 android:text="00:00"
                 android:textColor="@android:color/white"
                 android:textSize="44sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName1"
                 app:layout_constraintEnd_toEndOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
