@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="actionbar_background">#000000</color>
+    <color name="actionbar_text">#ffffff</color>
+
+    <color name="tm_dark_3">#40211C</color>
+    <color name="tm_dark_2">#7C5448</color>
+    <color name="tm_dark_1">#B07356</color>
+    <color name="tm_light_1">#C07A59</color>
+    <color name="tm_light_2">#CD8C6A</color>
+</resources>

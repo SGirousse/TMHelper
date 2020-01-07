@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_portrait_tm"
+    tools:context=".PlayerTimerActivity">
+
+    <ImageButton
+        android:id="@+id/playerTimer_soundButton"
+        android:layout_width="39dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:cropToPadding="false"
+        android:onClick="onSoundButton"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_sound_off" />
+
+    <Button
+        android:id="@+id/playerTimer_nextGenButton"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/holo_orange_dark"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:onClick="onPlayerNextGeneration"
+        android:text="Passer à la génération suivante"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewGenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="Génération"
+        android:textColor="@color/tm_light_1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/playerTimer_nextGenButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerTimer_nextPlayerButton">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p1ConstraintLayout"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/no"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currPlayerName"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="PlayerName"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no"
+                app:layout_constraintEnd_toStartOf="@+id/main_editTextPlayerTimeMin"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/no" />
+
+            <TextView
+                android:id="@+id/main_editTextPlayerTimeMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p2ConstraintLayout"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/no2"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/currPlayerName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="PlayerName"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no2"
+                app:layout_constraintEnd_toStartOf="@+id/playerTimeValue2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/no2" />
+
+            <TextView
+                android:id="@+id/playerTimeValue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName2"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p3ConstraintLayout"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="142dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/no3"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currPlayerName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="PlayerName"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no3"
+                app:layout_constraintEnd_toStartOf="@+id/playerTimeValue3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/no3" />
+
+            <TextView
+                android:id="@+id/playerTimeValue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName3"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p4ConstraintLayout"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="216dp"
+            app:layout_constraintEnd_toStartOf="@+id/p5ConstraintLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/p5ConstraintLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/no4"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currPlayerName4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="PlayerName"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no4"
+                app:layout_constraintEnd_toStartOf="@+id/playerTimeValue4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/no4" />
+
+            <TextView
+                android:id="@+id/playerTimeValue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName4"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/p5ConstraintLayout"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="288dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/no5"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currPlayerName5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="PlayerName"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/no5"
+                app:layout_constraintEnd_toStartOf="@+id/playerTimeValue5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/no5" />
+
+            <TextView
+                android:id="@+id/playerTimeValue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ft_tm_prototype"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="44sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/currPlayerName5"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/playerTimer_nextPlayerButton"
+        android:layout_width="396dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/tm_dark_3"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:onClick="onPlayerNextPlayer"
+        android:text="Joueur suivant"
+        android:textAlignment="center"
+        android:textColor="@color/tm_light_1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutPlayers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGenTitle" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerTimer_pauseButton"
+        app:layout_constraintStart_toEndOf="@+id/playerTimer_nextGenButton" />
+
+    <Button
+        android:id="@+id/playerTimer_pauseButton"
+        android:layout_width="81dp"
+        android:layout_height="80dp"
+        android:background="@color/tm_dark_2"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:onClick="onPause"
+        android:text="Pause"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerTimer_endGameButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/playerTimer_nextGenButton" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerTimer_endGameButton"
+        app:layout_constraintStart_toEndOf="@+id/playerTimer_pauseButton" />
+
+    <Button
+        android:id="@+id/playerTimer_endGameButton"
+        android:layout_width="81dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/tm_dark_2"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="Fin de partie"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

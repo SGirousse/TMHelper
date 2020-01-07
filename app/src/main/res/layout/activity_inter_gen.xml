@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_portrait_tm"
+    tools:context=".InterGenActivity">
+
+    <ImageButton
+        android:id="@+id/interGen_soundButton"
+        android:layout_width="41dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:cropToPadding="false"
+        android:onClick="onSoundButton"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_sound_off" />
+
+    <TextView
+        android:id="@+id/textViewEndGenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="Fin de la génération"
+        android:textColor="@color/tm_light_1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="395dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="Après avoir effectué les actions de fin de génération (production, phase solaire, parlement, etc.) vous pouvez lancer la phase d'achat des cartes en appuyant sur le bouton"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cardBuyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEndGenTitle" />
+
+    <Button
+        android:id="@+id/cardBuyButton"
+        android:layout_width="395dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="256dp"
+        android:background="@color/tm_dark_3"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:onClick="onStartBuyCards"
+        android:text="Démarrer la phase d'achat des cartes"
+        android:textAlignment="center"
+        android:textColor="@color/tm_light_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/nextPhaseButton"
+        android:layout_width="395dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="504dp"
+        android:background="@android:color/holo_orange_dark"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:onClick="onNextGeneration"
+        android:text="Passer à la génération suivante"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chronoCarBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ft_tm_prototype"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/nextPhaseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardBuyButton" />
+
+</android.support.constraint.ConstraintLayout>
